@@ -22,9 +22,11 @@ const MusicPlayer = ({ onNext, onPrev, songIndex }) => {
 
   // on slider user value change
   const onSliderSetPosition = (value) => {
-    const sliderPos = value * playbackDuration;
-    sound.setPositionAsync(sliderPos);
-    // console.log(sliderPos);
+    if (sound) {
+      const sliderPos = value * playbackDuration;
+      sound.setPositionAsync(sliderPos);
+      // console.log(sliderPos);
+    }
   };
 
   // playback Status for slider
